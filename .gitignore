@@ -1,0 +1,8 @@
+# Bazel
+.bazel/
+bazel-bin
+bazel-genfiles
+bazel-out
+bazel-testlogs
+bazel-bm4
+.blaze/
