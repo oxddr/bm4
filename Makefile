@@ -12,10 +12,12 @@ all: $(STL_FILES)
 # Rule to build .stl files from .scad files
 build/%.stl: src/%.scad
 	@mkdir -p $(dir $@)
-	OPENSCADPATH=$(shell pwd)/src/lib openscad -D '$$fn=100' -o $@ $<
+	OPENSCADPATH=$(shell pwd)/src/lib openscad -D '$$fn=100' -o $@ -d $(patsubst %.stl,%.d,$@) $<
 
 # Clean up the build directory
 clean:
 	rm -rf build
 
 .PHONY: all clean
+
+-include $(patsubst %.stl,%.d,$(STL_FILES))
