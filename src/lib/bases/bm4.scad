@@ -13,11 +13,13 @@ module Magnet() {
 }
 
 module BM4_Sockets(size, only_diagonal = false) {
-  translate([5, size[1] - 5]) Magnet();
-  translate([size[0] - 5, 5]) Magnet();
+  s = is_list(size) ? size : [size, size];
+
+  translate([5, s[1] - 5]) Magnet();
+  translate([s[0] - 5, 5]) Magnet();
 
   if (!only_diagonal) {
     translate([5, 5]) Magnet();
-    translate([size[0] - 5, size[1] - 5]) Magnet();
+    translate([s[0] - 5, s[1] - 5]) Magnet();
   }
 }
