@@ -11,8 +11,7 @@ module BM4_Base(size, height = 3) {
 }
 
 module Magnet() {
-  // d = default_magnet_diameter, offset = 0) {
-  circle(d=3);
+  circle(d=3 + 0.15);
 }
 
 module BM4_Sockets(size, only_diagonal = false) {
