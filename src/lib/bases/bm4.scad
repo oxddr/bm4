@@ -11,7 +11,7 @@ module BM4_Base(size, height = 3) {
 }
 
 module Magnet() {
-  circle(d=3 + 0.15);
+  circle(d=3 + 0.1);
 }
 
 module BM4_Sockets(size, only_diagonal = false) {
@@ -27,7 +27,7 @@ module BM4_Sockets(size, only_diagonal = false) {
 }
 
 module HorseSlots(baseSize) {
-  slotWidth = 2.5;
+  slotWidth = 2.25; // orig 2.5
   slotLength = 35;
   slotSpacing = 2.8;
   translate(baseSize * 0.5) {
